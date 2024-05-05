@@ -21,6 +21,7 @@ class HomePage extends StatelessWidget {
     return products.map((product) {
       return Card(
         clipBehavior: Clip.antiAlias,
+        elevation: 0.0,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
@@ -36,14 +37,17 @@ class HomePage extends StatelessWidget {
               child: Padding(
                 padding: const EdgeInsets.fromLTRB(16.0, 12.0, 16.0, 8.0),
                 child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
                     Text(
                       product.name,
                       style: theme.textTheme.titleLarge,
+                      softWrap: false,
+                      overflow: TextOverflow.ellipsis,
                       maxLines: 1,
                     ),
-                    const SizedBox(height: 8.0),
+                    const SizedBox(height: 4.0),
                     Text(
                       formatter.format(product.price),
                       style: theme.textTheme.titleSmall,
@@ -67,15 +71,12 @@ class HomePage extends StatelessWidget {
             Icons.menu,
             semanticLabel: 'menu',
           ),
-          color: Colors.white,
           onPressed: () {
             print('Menu button');
           },
         ),
-        backgroundColor: Colors.blue,
         title: const Text(
           'SHRINE',
-          style: TextStyle(color: Colors.white),
         ),
         actions: <Widget>[
           IconButton(
@@ -83,7 +84,6 @@ class HomePage extends StatelessWidget {
               Icons.search,
               semanticLabel: 'search',
             ),
-            color: Colors.white,
             onPressed: () {
               print('Search button');
             },
@@ -93,7 +93,6 @@ class HomePage extends StatelessWidget {
               Icons.tune,
               semanticLabel: 'filter',
             ),
-            color: Colors.white,
             onPressed: () {
               print('Filter button');
             },
