@@ -31,7 +31,7 @@ class _MyAppState extends State<MyApp> {
           ),
           title: Text(
             "Internet",
-            style: TextStyle(fontWeight: FontWeight.w500),
+            style: TextStyle(fontWeight: FontWeight.w500, color: Colors.black),
           ),
           centerTitle: true,
           bottom: PreferredSize(
